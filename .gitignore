@@ -1,0 +1,24 @@
+# Bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+
+# Virtualenvs
+.venv/
+.env
+
+# Build artifacts
+*.egg-info/
+
+# Dataset downloads (re-fetched on first run)
+experiments/data/raw/
+
+# Cached kernel matrices
+experiments/cache/
+
+# Experiment outputs
+experiments/figures/
+experiments/results/

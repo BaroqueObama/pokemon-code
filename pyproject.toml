@@ -1,0 +1,56 @@
+[project]
+name = "pokemon-code"
+version = "0.1.0"
+description = "The Pokémon Theorem: Fairness Impossibility as Hilbert Space Geometry"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Daniel Matsui Smola"}, {name = "Alex Smola"}]
+requires-python = ">=3.12"
+dependencies = [
+    # Core numerics
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "scikit-learn>=1.4",
+    "pandas>=2.1",
+
+    # GPU-accelerated kernel computation
+    "torch>=2.2",
+
+    # Fairness
+    "fairlearn>=0.10",
+    "aif360>=0.6",
+
+    # Kernel testing
+    "alibi-detect>=0.12",
+    "hyppo>=0.4",
+
+    # Datasets
+    "folktables>=0.0.12",
+
+    # Gradient-boosted trees
+    "xgboost>=2.0",
+
+    # Visualization
+    "matplotlib>=3.8",
+
+    # Statistics
+    "statsmodels>=0.14",
+
+    # Utilities
+    "requests>=2.31",
+    "tqdm>=4.66",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["experiments"]
+
+# Use CUDA 12.1 PyTorch on Linux
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu121", marker = "platform_system == 'Linux'" },
+]
