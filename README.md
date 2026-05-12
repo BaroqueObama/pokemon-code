@@ -1,6 +1,12 @@
 # The Pokémon Theorem — Code Release
 
-Code for *The Pokémon Theorem and other Fairness Impossibility Results* (submitted NeurIPS 2026). Reproduces the nine panels of Figure 1 on Adult Income, COMPAS, and ACS PUMS.
+Code for [*The Pokémon Theorem and other Fairness Impossibility Results*](http://arxiv.org/abs/2605.09221) (submitted NeurIPS 2026). Reproduces the nine panels of Figure 1 on Adult Income, COMPAS, and ACS PUMS.
+
+## Abstract
+
+Fairness impossibility results often look like distinct scalar incompatibility statements. We show that several share one RKHS geometry: fairness criteria are linear constraints on conditional mean embeddings, and unequal base rates make the law of total expectation overdetermine those constraints.
+
+This view yields four results. The Kleinberg--Mullainathan--Raghavan dichotomy needs only group-conditional unbiasedness, not full calibration. The *Pokémon theorem* shows that a distinct group pair satisfying any finite collection of linear mean-fairness criteria leaves a residual violation witnessed by the MMD, decaying at the Kolmogorov $m$-width rate under spectral regularity. The same tools prove an impossibility for fair feature learning: parity and class-conditional separation in representation space force class collapse under unequal base rates. The approximate relaxations yield signal and error frontiers, allowing a trade-off between real-world estimators and fairness goals. Experiments on standard fairness benchmarks are consistent with our bounds.
 
 ## Setup
 
